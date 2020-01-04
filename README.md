@@ -1,8 +1,12 @@
 # lscom
 
-a tool that lists active com ports on your system
+a crude python script that lists available active com ports on your workstation.
 
-# todo 
+if the com port is being used by sometihng, it will not show in the output. 
+
+this is useful if you plug in a console cable and want to quickly identify the com port using a terminal.
+
+# todo
 
 - [ ] put on PyPi
 - [ ] unit tests
