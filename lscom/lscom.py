@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
-list active com ports
-~~~~~~~~~~~~~~~~~~~~~
-
-make sure you have the pyserial package installed.
-"""
-
 import sys
 import glob
 
@@ -44,7 +37,3 @@ def list_active_serial_port_names():
         except (OSError, serial.SerialException):
             pass
     return result
-
-
-if __name__ == "__main__":
-    print(list_active_serial_port_names())
