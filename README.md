@@ -4,6 +4,8 @@ a crude python script that lists available active com ports on your workstation.
 
 this is useful if you plug in a console cable and you want to quickly identify which COM port is now available. note that actively use COM ports will not show in the output.
 
+the reason for this project is to more quickly find the com port once a USB console cable is attached to the host.
+
 # example
 
 ```
