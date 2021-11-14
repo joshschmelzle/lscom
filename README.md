@@ -1,30 +1,14 @@
 # lscom
 
-a crude python script that lists available active com ports on your workstation. this should work cross platform, but has not been extensively tested.
+List and discover available COM ports.
 
-this is useful if you plug in a console cable and you want to quickly identify which COM port is now available. note that actively use COM ports will not show in the output.
+Why? More quickly identify which COM ports are available for use. Any COM ports already in use will not be listed.
 
-the reason for this project is to more quickly find the com port once a USB console cable is attached to the host.
+lscom should work cross platform (Linux, macOS, Windows), but has not been extensively tested.
 
-# example
+## example
 
 ```
 $ lscom
 ['COM3']
 ```
-
-# local installation
-
-to install:
-
-- clone repository.
-
-- from your terminal `cd` into root of the repository.
-
-- run `python -m pip install .`
-
-- you should now be able to run `lscom` from your terminal
-
-to remove:
-
-- `python -m pip uninstall lscom`

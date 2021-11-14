@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
+#
+# |  _  _  _  ._ _
+# | _> (_ (_) | | |
 
 """
-list active com ports
-~~~~~~~~~~~~~~~~~~~~~
+lscom 
+~~~~~
 
-make sure you have the pyserial package installed.
+list available serial ports
 """
 
 from .lscom import list_active_serial_port_names

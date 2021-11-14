@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 
-import sys
 import os
+import sys
+
 from setuptools import find_packages, setup
 
 here = os.path.abspath(os.path.dirname(__file__))
 
 # 'setup.py publish' shortcut.
-if sys.argv[-1] == 'build':
-    os.system('python setup.py sdist bdist_wheel')
+if sys.argv[-1] == "build":
+    os.system("python setup.py sdist bdist_wheel")
     sys.exit()
 
 # load the package's __version__.py module as a dictionary
@@ -44,7 +45,12 @@ setup(
         "Intended Audience :: System Administrators",
         "Topic :: Utilities",
     ],
-    packages=find_packages(exclude=("tests", "test",)),
+    packages=find_packages(
+        exclude=(
+            "tests",
+            "test",
+        )
+    ),
     install_requires=requires,
     entry_points={"console_scripts": ["lscom=lscom.__main__:main"]},
 )
