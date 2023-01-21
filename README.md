@@ -11,7 +11,7 @@ $ lscom
 ['COM3']
 ```
 
-## PyPI Installation
+## Installation from PyPI
 
 ```bash
 python -m pip install lscom
