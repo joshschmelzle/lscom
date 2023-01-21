@@ -7,11 +7,21 @@ from setuptools import find_packages, setup
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-# 'setup.py publish' shortcut.
+# 'python setup.py build' shortcut
 if sys.argv[-1] == "build":
     os.system("python setup.py sdist bdist_wheel")
     sys.exit()
 
+# 'python setup.py check' shortcut
+if sys.argv[-1] == "check":
+    os.system("python -m twine check dist/*")
+    sys.exit()
+
+# 'python setup.py deploy' shortcut
+if sys.argv[-1] == "deploy":
+    os.system("python -m twine upload dist/*")
+    sys.exit()
+    
 # load the package's __version__.py module as a dictionary
 about = {}
 with open(os.path.join(here, "lscom", "__version__.py")) as f:

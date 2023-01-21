@@ -1,0 +1,12 @@
+pre-commit
+pre-commit-hooks
+pip-tools
+black
+isort
+tox
+autoflake
+mypy
+autoflake
+twine
+setuptools
+wheel
