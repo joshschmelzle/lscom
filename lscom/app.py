@@ -11,7 +11,6 @@ main app code
 """
 
 import glob
-import grp
 import os
 import sys
 
@@ -42,6 +41,8 @@ class lscom:
             return True, "Permission check required"
 
         try:
+            import grp
+
             dialout = grp.getgrnam("dialout")
             groups = os.getgroups()
             user = os.getlogin()

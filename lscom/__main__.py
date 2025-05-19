@@ -10,9 +10,9 @@ lscom
 list available serial ports
 """
 
+import argparse
 import sys
 
-from lscom import helpers
 from lscom.__version__ import __title__, __version__
 from lscom.app import run
 
@@ -34,7 +34,14 @@ def check_python_version():  # type: ignore
 
 
 def main():
-    parser = helpers.setup_parser()
+    parser = argparse.ArgumentParser(
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        description="lscom: list and discover available COM ports",
+        epilog="Made with Python by Josh Schmelzle",
+    )
+    parser.add_argument(
+        "--version", "-v", action="version", version=f"lscom version {__version__}"
+    )
     args = parser.parse_args()  # noqa: F841
     run()
 
@@ -43,8 +50,7 @@ def init():
     check_python_version()  # type: ignore
 
     if __name__ == "__main__":
-        main()
-        sys.exit(0)
+        sys.exit(main())
 
 
 init()
