@@ -54,7 +54,8 @@ class lscom:
                     f"""
     {user} is not in the dialout group. To fix:
     1. Run: sudo usermod -a -G dialout {user}
-    2. Log out and back in for the changes to take effect
+    2. Run: newgrp dialout (to apply changes immediately)
+       Or log out and back in for the changes to take effect
     """,
                 )
         except KeyError:
