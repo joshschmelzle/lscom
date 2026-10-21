@@ -17,12 +17,12 @@ from lscom.__version__ import __title__, __version__
 from lscom.app import run
 
 PY_MAJOR = 3
-PY_MINOR = 2
-MINIMUM_PYTHON_VERISON = "3.2"
+PY_MINOR = 13
+MINIMUM_PYTHON_VERISON = "3.13"
 
 
 def check_python_version():  # type: ignore
-    """Use old-school .format() method for if someone uses with very old Python."""
+    """Reject interpreters older than requires-python."""
     msg = """
 
 {title} version {pkgv} requires Python version {pyv} or higher.

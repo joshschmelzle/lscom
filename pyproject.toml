@@ -1,2 +1,50 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lscom"
+dynamic = ["version"]
+description = "list available active COM ports"
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Josh Schmelzle", email = "josh@joshschmelzle.com" },
+]
+keywords = ["com", "com ports", "serial"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Utilities",
+]
+dependencies = ["pyserial"]
+
+[project.urls]
+Homepage = "https://github.com/joshschmelzle/lscom"
+
+[project.scripts]
+lscom = "lscom.__main__:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "lscom.__version__.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["lscom*"]
+exclude = ["tests*", "test*"]
+
 [tool.isort]
 profile = "black"
+
+[tool.black]
+target-version = ["py313"]
+
+[tool.mypy]
+python_version = "3.13"
