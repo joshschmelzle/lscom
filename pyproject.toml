@@ -27,6 +27,13 @@ classifiers = [
 ]
 dependencies = ["pyserial"]
 
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "mypy",
+]
+
 [project.urls]
 Homepage = "https://github.com/joshschmelzle/lscom"
 
