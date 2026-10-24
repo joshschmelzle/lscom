@@ -48,10 +48,14 @@ class lscom:
 
         try:
             import grp
+            import pwd
 
             dialout = grp.getgrnam("dialout")
-            groups = os.getgroups()
-            user = os.getlogin()
+            # os.getlogin() needs a controlling terminal and raises ENOTTY
+            # in CI and other sessions that have no tty.
+            user = pwd.getpwuid(os.getuid()).pw_name
+            # getgroups() may omit the process's primary group id.
+            groups = {os.getgid(), *os.getgroups()}
             if dialout.gr_gid in groups:
                 return True, f"{user} has dialout group access"
             else:
